@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap');
+
+.pageContainer {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Cabin', sans-serif;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 1rem;
+}
+
+.card {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.value {
+  color: #111827;
+}
+
+.paid {
+  color: #059669;
+  font-weight: 500;
+}
+
+.unpaid {
+  color: #b91c1c;
+  font-weight: 500;
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap');
+
+.pageContainer {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Cabin', sans-serif;
+}
+
+.formContainer {
+  max-width: 400px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.inputBox {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 0.75rem;
+  background-color: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1e3a8a;
+}
+
+.errorText {
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+}
