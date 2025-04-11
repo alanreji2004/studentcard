@@ -13,7 +13,9 @@ const Login = () => {
 
   const handleSubmit = async () => {
     setError('')
-    const q = query(collection(db, 'students'), where('Admissionnumber', '==', admissionNumber))
+    const formattedAdmissionNumber = admissionNumber.trim().toUpperCase()
+    const formattedName = name.trim().toLowerCase()
+    const q = query(collection(db, 'students'), where('Admissionnumber', '==', formattedAdmissionNumber))
     const snapshot = await getDocs(q)
     if (snapshot.empty) {
       setError('Invalid Admission Number')
@@ -21,7 +23,7 @@ const Login = () => {
     }
     const docSnap = snapshot.docs[0]
     const data = docSnap.data()
-    if (data.Name !== name) {
+    if (data.Name.trim().toLowerCase() !== formattedName) {
       setError('Name does not match')
       return
     }
