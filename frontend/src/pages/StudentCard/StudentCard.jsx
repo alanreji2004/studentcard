@@ -28,14 +28,16 @@ const StudentCard = () => {
 
   if (!student) return null
 
+  const isPaid = student.fullypaid === 1 || (student.partiallypaid && student.partiallypaid > 0)
+
   return (
     <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.cardContainer}>
         <div className={styles.card}>
-        <div className={styles.qrWrapper}>
-          <QRCode value={id} size={120} />
-        </div>
+          <div className={styles.qrWrapper}>
+            <QRCode value={id} size={120} />
+          </div>
           <div className={styles.row}>
             <span className={styles.label}>Admission No:</span>
             <span className={styles.value}>{student.Admissionnumber}</span>
@@ -58,8 +60,8 @@ const StudentCard = () => {
           </div>
           <div className={styles.row}>
             <span className={styles.label}>Fee Status:</span>
-            <span className={student.fullypaid === 1 ? styles.paid : styles.unpaid}>
-              {student.fullypaid === 1 ? 'Paid' : 'Not Paid'}
+            <span className={isPaid ? styles.paid : styles.unpaid}>
+              {isPaid ? 'Paid' : 'Not Paid'}
             </span>
           </div>
         </div>
@@ -69,4 +71,3 @@ const StudentCard = () => {
 }
 
 export default StudentCard
- 
