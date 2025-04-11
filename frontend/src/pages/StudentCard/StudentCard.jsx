@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { doc, getDoc, getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 import Navbar from '../../components/Navbar/Navbar'
+import QRCode from 'react-qr-code'
 import styles from './StudentCard.module.css'
 
 const StudentCard = () => {
@@ -32,6 +33,9 @@ const StudentCard = () => {
       <Navbar />
       <div className={styles.cardContainer}>
         <div className={styles.card}>
+        <div className={styles.qrWrapper}>
+          <QRCode value={id} size={120} />
+        </div>
           <div className={styles.row}>
             <span className={styles.label}>Admission No:</span>
             <span className={styles.value}>{student.Admissionnumber}</span>
@@ -65,3 +69,4 @@ const StudentCard = () => {
 }
 
 export default StudentCard
+ 
