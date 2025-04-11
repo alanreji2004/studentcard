@@ -6,6 +6,7 @@ import {
 } from "react-router-dom"
 import Login from "./pages/Login/Login"
 import StudentCard from "./pages/StudentCard/StudentCard"
+import ProtectedRoute from "./ProtectedRoute"
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/studentcard/:id",
-    element: <StudentCard />,
+    element:(
+      <ProtectedRoute>
+        <StudentCard />
+      </ProtectedRoute>
+    ),
   },
 ])
 

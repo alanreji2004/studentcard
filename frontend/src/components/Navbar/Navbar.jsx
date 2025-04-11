@@ -13,8 +13,8 @@ export default function Navbar() {
   }
 
   const handleLogout = () => {
-    sessionStorage.removeItem("isLoggedIn")
-    navigate("/login")
+    localStorage.removeItem("isLoggedIn")
+    navigate("/")
   }
 
   return (

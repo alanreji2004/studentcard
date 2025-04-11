@@ -27,6 +27,9 @@ const Login = () => {
       setError('Name does not match')
       return
     }
+    localStorage.setItem('isLoggedIn', 'true')
+    localStorage.setItem('studentId', docSnap.id)
+  
     navigate(`/studentcard/${docSnap.id}`)
   }
 
