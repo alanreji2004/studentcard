@@ -31,24 +31,26 @@ const Login = () => {
   return (
     <div className={styles.pageContainer}>
       <Navbar />
-      <div className={styles.formContainer}>
-        <h2 className={styles.title}>Student Login</h2>
-        <input
-          type="text"
-          placeholder="Admission Number"
-          value={admissionNumber}
-          onChange={e => setAdmissionNumber(e.target.value)}
-          className={styles.inputBox}
-        />
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          className={styles.inputBox}
-        />
-        {error && <p className={styles.errorText}>{error}</p>}
-        <button onClick={handleSubmit} className={styles.button}>Submit</button>
+      <div className={styles.formWrapper}>
+        <div className={styles.formContainer}>
+          <h2 className={styles.title}>Student Login</h2>
+          <input
+            type="text"
+            placeholder="Admission Number"
+            value={admissionNumber}
+            onChange={e => setAdmissionNumber(e.target.value)}
+            className={styles.inputBox}
+          />
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            className={styles.inputBox}
+          />
+          {error && <p className={styles.errorText}>{error}</p>}
+          <button onClick={handleSubmit} className={styles.button}>Submit</button>
+        </div>
       </div>
     </div>
   )
