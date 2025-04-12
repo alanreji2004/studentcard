@@ -117,7 +117,8 @@ const StudentCard = () => {
             <span className={styles.label}>Fee Status:</span>
             <span className={isPaid ? styles.paid : styles.unpaid}>{isPaid ? 'Paid' : 'Not Paid'}</span>
           </div>
-        </div>
+          <p className={styles.securityNote}>Digitally secured & encrypted</p>
+          </div>
       </div>
 
       {showModal && (

@@ -23,8 +23,29 @@
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   background-color: #fff;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-image: url('logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
 }
 
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 .imageQrContainer {
   display: flex;
   justify-content: space-between;
@@ -157,4 +178,18 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: 4px;
+}
+.securityNote {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .securityNote {
+    margin-top: 10px;
+  }
 }
